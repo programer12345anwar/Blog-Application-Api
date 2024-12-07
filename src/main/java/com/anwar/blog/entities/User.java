@@ -18,14 +18,16 @@ import lombok.Setter;
 @NoArgsConstructor // Required by JPA
 @AllArgsConstructor // Optional for convenience
 public class User {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // Primary key with auto-increment
-    private int id;
-    @Column(name="user_name" , nullable = false,length = 100)//so you can change name by using @Column
-    private String name;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY) // Primary key with auto-increment
+	private int id;
+	
+	@Column(name = "user_name", nullable = false, length = 100) // so you can change name by using @Column
+	private String name;
 
-    private String email;
+	private String email;
 
-    private String password;
+	private String password;
+	
+	private String about;
 }
-
