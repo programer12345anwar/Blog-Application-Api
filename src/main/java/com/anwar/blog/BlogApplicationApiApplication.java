@@ -11,7 +11,8 @@ public class BlogApplicationApiApplication {
     public static void main(String[] args) {
         SpringApplication.run(BlogApplicationApiApplication.class, args);
     }
-    //@Bean should not be declared within the main method
+    //@Bean should not be declared within the main method ,we declare in this class b'z of @SpringBootApplication or we can create 
+    //a separate class for bead declaration
 
     @Bean
     public ModelMapper modelMapper() {

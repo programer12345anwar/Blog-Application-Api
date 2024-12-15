@@ -13,13 +13,17 @@ import com.anwar.blog.payloads.ApiResponse;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-
+	
+	//exception handling of ResourceNotFoundException
+	
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<ApiResponse> resourceNotFoundExceptionHandler(ResourceNotFoundException ex) {
 		String message = ex.getMessage();
 		ApiResponse apiResponse = new ApiResponse(message, false);
 		return new ResponseEntity<ApiResponse>(apiResponse, HttpStatus.NOT_FOUND);
 	}
+	
+	//exception handling of MethodArgumentNotValidException 
 
 	@ExceptionHandler(MethodArgumentNotValidException.class)
 	public ResponseEntity<Map<String, String>> handleMethodArgsNotValidException(MethodArgumentNotValidException ex) {
